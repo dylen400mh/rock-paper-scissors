@@ -32,12 +32,20 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+function game() {
+
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = getPlayerChoice()
+        playerSelection = captializeFirstChar(playerSelection);
+        let computerSelection = getComputerChoice();
+
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
 const choices = ["Rock", "Paper", "Scissors"]
 
-let playerSelection = getPlayerChoice()
-playerSelection = captializeFirstChar(playerSelection);
-let computerSelection = getComputerChoice();
+game();
 
-console.log(playRound(playerSelection, computerSelection));
 
 
