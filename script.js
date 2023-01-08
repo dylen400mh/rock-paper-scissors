@@ -1,4 +1,4 @@
-const choices = ["Rock", "Paper", "Scissors"]
+const choices = ["rock", "paper", "scissors"]
 
 function getComputerChoice() {
     let choiceIndex = Math.floor(Math.random() * 3);
@@ -6,3 +6,4 @@ function getComputerChoice() {
 
     return computerChoice;
 }
+
