@@ -35,6 +35,10 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+function getScore() {
+    return `${playerScore}-${computerScore}`;
+}
+
 function wonGame(playerScore, computerScore) {
     if (playerScore > computerScore) {
         return true;
@@ -44,13 +48,13 @@ function wonGame(playerScore, computerScore) {
 }
 
 function displayEndMessage() {
-    if (wonGame()) {
-        return `You win! The final score is ${playerScore}-${computerScore}`;
+    if (won) {
+        return "You won the game! Congratulations!";
     } else if (playerScore === computerScore) {
-        return `It's a tie! The final score is ${playerScore}-${computerScore}`;
+        return "You tied the game!";
     }
 
-    return `You lose! The final score is ${playerScore}-${computerScore}`;
+    return "You lost the game! Better luck next time.";
 }
 
 function game() {
@@ -61,15 +65,17 @@ function game() {
         let computerSelection = getComputerChoice();
 
         console.log(playRound(playerSelection, computerSelection));
+        console.log(getScore());
     }
 
-    wonGame(playerScore, computerScore);
+    won = wonGame(playerScore, computerScore);
     console.log(displayEndMessage());
 }
 
 const choices = ["Rock", "Paper", "Scissors"]
 let playerScore = 0;
 let computerScore = 0;
+let won;
 
 game();
 
