@@ -25,11 +25,32 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "Rock" && computerSelection === "Scissors"
         || playerSelection === "Paper" && computerSelection === "Rock"
         || playerSelection === "Scissors" && computerSelection === "Paper") {
+
+        playerScore++;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     }
 
+    computerScore++;
     return `You lose! ${computerSelection} beats ${playerSelection}.`;
 
+}
+
+function wonGame(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        return true;
+    }
+
+    return false;
+}
+
+function displayEndMessage() {
+    if (wonGame()) {
+        return `You win! The final score is ${playerScore}-${computerScore}`;
+    } else if (playerScore === computerScore) {
+        return `It's a tie! The final score is ${playerScore}-${computerScore}`;
+    }
+
+    return `You lose! The final score is ${playerScore}-${computerScore}`;
 }
 
 function game() {
@@ -41,11 +62,17 @@ function game() {
 
         console.log(playRound(playerSelection, computerSelection));
     }
+
+    wonGame(playerScore, computerScore);
+    console.log(displayEndMessage());
 }
 
 const choices = ["Rock", "Paper", "Scissors"]
+let playerScore = 0;
+let computerScore = 0;
 
 game();
+
 
 
 
