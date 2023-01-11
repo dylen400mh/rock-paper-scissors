@@ -4,4 +4,4 @@ Rock-Paper-Scissors is a game in which two players use their hands to form the s
 
 Rock beats Scissors, Scissors beats Paper, and Paper beats Rock.
 
-In this program you play 5 rounds of rock-paper-scissors against the computer; if you have the highest score after the five rounds, you win!
+In this program you play multiple rounds of rock-paper-scissors against the computer, and whoever achieves 5 points first wins!
