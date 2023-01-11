@@ -74,7 +74,9 @@ function game() {
         let computerSelection = getComputerChoice();
 
         console.log(playRound(playerSelection, computerSelection));
-        console.log(getScore());
+
+        const score = document.querySelector(".score");
+        score.textContent = getScore();
         won = wonGame(playerScore, computerScore);
         console.log(displayEndMessage());
     }));
