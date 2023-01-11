@@ -5,10 +5,8 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getPlayerChoice() {
-    let playerChoice = prompt("Choose Rock, Paper, Scissors");
-
-    return playerChoice;
+function getPlayerChoice(e) {
+    return e.target.textContent;
 }
 
 function captializeFirstChar(string) {
@@ -68,21 +66,35 @@ function game() {
     //     console.log(getScore());
     // }
 
-    let playerSelection = getPlayerChoice()
-    playerSelection = captializeFirstChar(playerSelection);
-    let computerSelection = getComputerChoice();
+    //new code here to get player choice and run match using event listener
+    let playerSelection;
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.addEventListener("click", (e) => {
+        playerSelection = getPlayerChoice(e);
+        let computerSelection = getComputerChoice();
 
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(getScore());
-
-    won = wonGame(playerScore, computerScore);
-    console.log(displayEndMessage());
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(getScore());
+        won = wonGame(playerScore, computerScore);
+        console.log(displayEndMessage());
+    }));
 }
+
 
 const choices = ["Rock", "Paper", "Scissors"]
 let playerScore = 0;
 let computerScore = 0;
 let won;
+
+
+
+
+
+
+
+
+
+
 
 game();
 
