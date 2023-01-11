@@ -58,15 +58,6 @@ function displayEndMessage() {
 
 function game() {
 
-    // for (let i = 0; i < 5; i++) {
-    //     let playerSelection = getPlayerChoice()
-    //     playerSelection = captializeFirstChar(playerSelection);
-    //     let computerSelection = getComputerChoice();
-
-    //     console.log(playRound(playerSelection, computerSelection));
-    //     console.log(getScore());
-    // }
-
     //new code here to get player choice and run match using event listener
     let playerSelection;
     const buttons = document.querySelectorAll("button");
