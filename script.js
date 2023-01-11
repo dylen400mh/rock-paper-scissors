@@ -59,14 +59,21 @@ function displayEndMessage() {
 
 function game() {
 
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = getPlayerChoice()
-        playerSelection = captializeFirstChar(playerSelection);
-        let computerSelection = getComputerChoice();
+    // for (let i = 0; i < 5; i++) {
+    //     let playerSelection = getPlayerChoice()
+    //     playerSelection = captializeFirstChar(playerSelection);
+    //     let computerSelection = getComputerChoice();
 
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(getScore());
-    }
+    //     console.log(playRound(playerSelection, computerSelection));
+    //     console.log(getScore());
+    // }
+
+    let playerSelection = getPlayerChoice()
+    playerSelection = captializeFirstChar(playerSelection);
+    let computerSelection = getComputerChoice();
+
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(getScore());
 
     won = wonGame(playerScore, computerScore);
     console.log(displayEndMessage());
