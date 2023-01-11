@@ -38,6 +38,7 @@ function getScore() {
 }
 
 function wonGame(playerScore, computerScore) {
+
     if (playerScore > computerScore) {
         return true;
     }
@@ -73,13 +74,20 @@ function game() {
         playerSelection = getPlayerChoice(e);
         let computerSelection = getComputerChoice();
 
-        console.log(playRound(playerSelection, computerSelection));
+
+        const result = document.querySelector(".result");
+        result.textContent = playRound(playerSelection, computerSelection);
 
         const score = document.querySelector(".score");
         score.textContent = getScore();
-        won = wonGame(playerScore, computerScore);
-        console.log(displayEndMessage());
-    }));
+
+        //if statement is needed else program will display end message every round
+        if (playerScore === 5 || computerScore === 5) {
+            won = wonGame(playerScore, computerScore);
+            const endMessage = document.querySelector(".end-message");
+            endMessage.textContent = displayEndMessage();
+        }
+    })); //all "game related" code sits inside eventListener function b/c we only want it to run when button is clicked
 }
 
 
