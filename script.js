@@ -81,24 +81,13 @@ function game() {
     })); //all "game related" code sits inside eventListener function b/c we only want it to run when button is clicked
 }
 
-
 const choices = ["Rock", "Paper", "Scissors"]
 let playerScore = 0;
 let computerScore = 0;
 let won;
 
-
-
-
-
-
-
-
-
-
-
 game();
 
-
-
-
+/*notes to self: 
+buttons should disappear after winner announced to prevent playing past highest score. Add button beside options to restart score and screen
+toy around with css to make page more engaging*/
